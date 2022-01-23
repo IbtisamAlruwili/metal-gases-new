@@ -38,13 +38,13 @@ export default function App() {
   }, [userInfo]);
 
   const changeEmail = (e) => {
-    let myUser = { ...user };
+    let myUser = [...user ];
     myUser.email = e.target.value;
     setuser(myUser);
   };
 
   const changePassword = (e) => {
-    let myUser = { ...user };
+    let myUser = [ ...user ];
     myUser.password = e.target.value;
     setuser(myUser);
   };
@@ -58,7 +58,7 @@ export default function App() {
       console.log(response.data);
       if (response.data.roleId == 1) {
         //اشيك على البيانات وارجع من الريسبونس ان الرول تساوي واحد
-        settoken(response.data.token); //اذا هو واحد يجيب التوكن للشخص
+        settoken(response.data.token); //اذا هو واحد يجيب التوكن للادمن
         navigate("/home");
         localStorage.setItem("token", response.data.token);
         localStorage.setItem("user", "admin");
@@ -87,9 +87,9 @@ export default function App() {
     <div>
       <Routes>
         <Route path="/metal-gases-new" element={<Navigate to="/home" />} />
-        <Route path="/home" element={<Home logOut={logOut} />} />
+        <Route path="/metal-gases-new" element={<Home logOut={logOut} />} />
         <Route
-          path="/products"   //     اذا شفت الراوت هذا يطلع لي  كومبوننت الغازات
+          path="/products"   //     اذا شفت الراوت هذا يطلع لي  كومبوننت 
           element={<Products isAdmin={isAdmin} token={token} logOut={logOut} />}
         />
         <Route 
