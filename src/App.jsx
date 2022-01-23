@@ -86,8 +86,8 @@ export default function App() {
   return (
     <div>
       <Routes>
-        <Route path="/metal-gases-new" element={<Navigate to="/home" />} />
-        <Route path="/metal-gases-new" element={<Home logOut={logOut} />} />
+        <Route path="/home" element={<Navigate to="/home" />} />
+        <Route path="/home" element={<Home logOut={logOut} />} />
         <Route
           path="/products"   //     اذا شفت الراوت هذا يطلع لي  كومبوننت 
           element={<Products isAdmin={isAdmin} token={token} logOut={logOut} />}
